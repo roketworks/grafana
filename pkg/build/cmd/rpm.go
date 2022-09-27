@@ -5,6 +5,7 @@ import (
 	"crypto"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -13,7 +14,6 @@ import (
 	"github.com/grafana/grafana/pkg/build/config"
 	"github.com/grafana/grafana/pkg/build/packaging"
 	"github.com/grafana/grafana/pkg/infra/fs"
-	"github.com/rs/zerolog/log"
 	"golang.org/x/crypto/openpgp"
 	"golang.org/x/crypto/openpgp/armor"
 	"golang.org/x/crypto/openpgp/packet"
@@ -39,7 +39,7 @@ func updateRPMRepo(cfg PublishConfig, workDir string) error {
 	}
 	defer func() {
 		if err := os.RemoveAll(repoRoot); err != nil {
-			log.Warn().Msgf("Failed to remove %q: %s", repoRoot, err.Error())
+			log.Printf("Failed to remove %q: %s\n", repoRoot, err.Error())
 		}
 	}()
 
@@ -50,7 +50,7 @@ func updateRPMRepo(cfg PublishConfig, workDir string) error {
 	folderURI := fmt.Sprintf("gs://%s/%s/%s", cfg.RPMRepoBucket, strings.ToLower(string(cfg.Edition)), repoName)
 
 	// Download the RPM database
-	log.Info().Msgf("Downloading RPM database from GCS (%s)...", folderURI)
+	log.Printf("Downloading RPM database from GCS (%s)...\n", folderURI)
 	cmd := exec.Command("gsutil", "-m", "rsync", "-r", "-d", folderURI, repoRoot)
 	if output, err := cmd.CombinedOutput(); err != nil {
 		return fmt.Errorf("failed to download RPM database from GCS: %w\n%s", err, output)
@@ -98,9 +98,9 @@ func updateRPMRepo(cfg PublishConfig, workDir string) error {
 
 	// Sync packages first to avoid cache misses
 	if cfg.DryRun {
-		log.Info().Msgf("Simulating upload of RPMs to GCS (%s)", folderURI)
+		log.Printf("Simulating upload of RPMs to GCS (%s)\n", folderURI)
 	} else {
-		log.Info().Msgf("Uploading RPMs to GCS (%s)...", folderURI)
+		log.Printf("Uploading RPMs to GCS (%s)...\n", folderURI)
 		args := []string{"-m", "cp"}
 		args = append(args, rpms...)
 		args = append(args, folderURI)
@@ -111,15 +111,15 @@ func updateRPMRepo(cfg PublishConfig, workDir string) error {
 	}
 
 	if cfg.DryRun {
-		log.Info().Msgf("Simulating upload of RPM repo metadata to GCS (%s)", folderURI)
+		log.Printf("Simulating upload of RPM repo metadata to GCS (%s)\n", folderURI)
 	} else {
-		log.Info().Msgf("Uploading RPM repo metadata to GCS (%s)...", folderURI)
+		log.Printf("Uploading RPM repo metadata to GCS (%s)...\n", folderURI)
 		cmd = exec.Command("gsutil", "-m", "rsync", "-r", "-d", repoRoot, folderURI)
 		if output, err := cmd.CombinedOutput(); err != nil {
 			return fmt.Errorf("failed to upload RPM repo metadata to GCS: %w\n%s", err, output)
 		}
 		allRepoResources := fmt.Sprintf("%s/**/*", folderURI)
-		log.Info().Msgf("Setting cache ttl for RPM repo resources on GCS (%s)...", allRepoResources)
+		log.Printf("Setting cache ttl for RPM repo resources on GCS (%s)...\n", allRepoResources)
 		cmd = exec.Command("gsutil", "-m", "setmeta", "-h", CacheSettings+cfg.TTL, allRepoResources)
 		if output, err := cmd.CombinedOutput(); err != nil {
 			return fmt.Errorf("failed to set cache ttl for RPM repo resources on GCS: %w\n%s", err, output)
@@ -157,7 +157,7 @@ func downloadRPMs(cfg PublishConfig, workDir string) error {
 
 	u := fmt.Sprintf("gs://%s/%s/%s/grafana%s-%s-*.*.rpm*", cfg.Bucket,
 		strings.ToLower(string(cfg.Edition)), ReleaseFolder, sfx, version)
-	log.Info().Msgf("Downloading RPM packages %q...", u)
+	log.Printf("Downloading RPM packages %q...\n", u)
 	args := []string{
 		"-m",
 		"cp",
@@ -248,7 +248,7 @@ func signRPMRepo(repoRoot string, cfg PublishConfig) error {
 		return fmt.Errorf("private or public key is empty")
 	}
 
-	log.Info().Msgf("Signing RPM repo")
+	log.Printf("Signing RPM repo")
 
 	pubKey, err := getPublicKey(cfg)
 	if err != nil {

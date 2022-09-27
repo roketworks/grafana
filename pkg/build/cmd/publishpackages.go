@@ -3,25 +3,18 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"strings"
 
 	"github.com/grafana/grafana/pkg/build/config"
 	"github.com/grafana/grafana/pkg/build/gcloud"
 	"github.com/grafana/grafana/pkg/build/gpg"
-	"github.com/rs/zerolog/log"
 	"github.com/urfave/cli/v2"
 )
 
 // PublishPackages implements the sub-command "publish-packages".
 func PublishPackages(c *cli.Context) error {
-	if c.NArg() > 1 {
-		if err := cli.ShowSubcommandHelp(c); err != nil {
-			return cli.NewExitError(err.Error(), 1)
-		}
-		return cli.NewExitError("", 1)
-	}
-
 	if err := gcloud.ActivateServiceAccount(); err != nil {
 		return fmt.Errorf("couldn't activate service account, err: %w", err)
 	}
@@ -81,7 +74,7 @@ func PublishPackages(c *cli.Context) error {
 		}
 		defer func() {
 			if err := os.RemoveAll(workDir); err != nil {
-				log.Warn().Msgf("Failed to remove temporary directory %q: %s", workDir, err.Error())
+				log.Printf("Failed to remove temporary directory %q: %s\n", workDir, err.Error())
 			}
 		}()
 		if err := updatePkgRepos(cfg, workDir); err != nil {
@@ -89,7 +82,7 @@ func PublishPackages(c *cli.Context) error {
 		}
 	}
 
-	log.Info().Msg("Successfully published packages!")
+	log.Println("Successfully published packages!")
 	return nil
 }
 
@@ -103,11 +96,11 @@ func updatePkgRepos(cfg PublishConfig, workDir string) error {
 	// both by hand
 	debErr := updateDebRepo(cfg, workDir)
 	if debErr != nil {
-		log.Error().Msgf("Updating Deb repo failed: %s", debErr)
+		log.Printf("Updating Deb repo failed: %s\n", debErr)
 	}
 	rpmErr := updateRPMRepo(cfg, workDir)
 	if rpmErr != nil {
-		log.Error().Msgf("Updating RPM repo failed: %s", rpmErr)
+		log.Printf("Updating RPM repo failed: %s\n", rpmErr)
 	}
 
 	if debErr != nil {
@@ -117,7 +110,7 @@ func updatePkgRepos(cfg PublishConfig, workDir string) error {
 		return rpmErr
 	}
 
-	log.Info().Msg("Updated Deb and RPM repos successfully!")
+	log.Println("Updated Deb and RPM repos successfully!")
 
 	return nil
 }
