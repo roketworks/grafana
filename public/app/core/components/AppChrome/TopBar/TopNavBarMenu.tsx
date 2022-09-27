@@ -1,5 +1,4 @@
 import { css } from '@emotion/css';
-import { i18n } from '@lingui/core';
 import { cloneDeep } from 'lodash';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
@@ -34,8 +33,8 @@ export function TopNavBarMenu({ node: nodePlain }: TopNavBarMenuProps) {
       }
     >
       {node.children?.map((item) => {
-        const translationKey = item.id && menuItemTranslations[item.id];
-        const itemText = translationKey ? i18n._(translationKey) : item.text;
+        const translation = item.id && menuItemTranslations[item.id];
+        const itemText = translation ?? item.text;
         const showExternalLinkIcon = /^https?:\/\//.test(item.url || '');
         return item.url ? (
           <MenuItem

@@ -1,0 +1,283 @@
+{
+  "navigation": {
+    "kiosk": {
+      "tv-alert": ""
+    }
+  },
+  "nav": {
+    "home": "",
+    "create": "",
+    "create-dashboard": "",
+    "create-folder": "",
+    "create-import": "",
+    "create-alert": "",
+    "starred": "",
+    "starred-empty": "",
+    "dashboards": "",
+    "manage-dashboards": "",
+    "playlists": "",
+    "snapshots": "",
+    "library-panels": "",
+    "new-dashboard": "",
+    "new-folder": "",
+    "explore": "",
+    "alerting": "",
+    "alerting-legacy": "",
+    "alerting-list": "",
+    "alerting-receivers": "",
+    "alerting-am-routes": "",
+    "alerting-channels": "",
+    "alerting-silences": "",
+    "alerting-groups": "",
+    "alerting-admin": "",
+    "config": "",
+    "datasources": "",
+    "correlations": "",
+    "users": "",
+    "teams": "",
+    "plugins": "",
+    "org-settings": "",
+    "api-keys": "",
+    "service-accounts": "",
+    "live": "",
+    "live-status": "",
+    "live-pipeline": "",
+    "live-cloud": "",
+    "help": "",
+    "profile/settings": "",
+    "profile/password": "",
+    "sign-out": ""
+  },
+  "folder-picker": {
+    "loading": ""
+  },
+  "shared-preferences": {
+    "theme": {
+      "default-label": "",
+      "dark-label": "",
+      "light-label": ""
+    },
+    "title": "",
+    "fields": {
+      "theme-label": "",
+      "home-dashboard-label": "",
+      "home-dashboard-placeholder": "",
+      "week-start-label": "",
+      "locale-label": "",
+      "locale-placeholder": ""
+    }
+  },
+  "common": {
+    "locale": {
+      "default": "",
+      "en": "",
+      "es": "",
+      "fr": ""
+    },
+    "save": ""
+  },
+  "shared-dashboard": {
+    "fields": {
+      "timezone-label": ""
+    }
+  },
+  "dashboard": {
+    "toolbar": {
+      "unmark-favorite": "",
+      "mark-favorite": "",
+      "share": "",
+      "comments-show": "",
+      "playlist-previous": "",
+      "playlist-stop": "",
+      "playlist-next": "",
+      "tv-button": "",
+      "add-panel": "",
+      "save": "",
+      "open-original": "",
+      "settings": "",
+      "refresh": ""
+    },
+    "refresh-picker": {
+      "off-description": "",
+      "on-description": "",
+      "off-label": "",
+      "off-arialabel": ""
+    },
+    "inspect": {
+      "data-tab": "",
+      "stats-tab": "",
+      "meta-tab": "",
+      "json-tab": "",
+      "error-tab": "",
+      "actions-tab": "",
+      "query-tab": "",
+      "title": "",
+      "subtitle": ""
+    },
+    "inspect-data": {
+      "series-to-columns": "",
+      "panel-transforms": "",
+      "formatted": "",
+      "excel-header": "",
+      "data-options": "",
+      "dataframe-label": "",
+      "dataframe-aria-label": "",
+      "transformations-label": "",
+      "transformations-description": "",
+      "formatted-data-label": "",
+      "formatted-data-description": "",
+      "download-excel-label": "",
+      "download-excel-description": "",
+      "download-csv": "",
+      "download-logs": "",
+      "download-traces": "",
+      "download-service": "",
+      "transformation": ""
+    },
+    "inspect-json": {
+      "panel-json-label": "",
+      "panel-json-description": "",
+      "panel-data-label": "",
+      "panel-data-description": "",
+      "dataframe-label": "",
+      "dataframe-description": "",
+      "unknown": "",
+      "select-source": ""
+    },
+    "inspect-meta": {
+      "no-inspector": ""
+    },
+    "inspect-stats": {
+      "request-time": "",
+      "processing-time": "",
+      "queries": "",
+      "rows": "",
+      "table-title": "",
+      "data-title": ""
+    }
+  },
+  "share-modal": {
+    "embed": {
+      "time-range-description": "",
+      "info": "",
+      "time-range": "",
+      "html": "",
+      "html-description": "",
+      "copy": ""
+    },
+    "export": {
+      "share-externally-label": "",
+      "share-default-label": "",
+      "info-text": "",
+      "cancel-button": "",
+      "view-button": "",
+      "save-button": ""
+    },
+    "library": {
+      "info": ""
+    },
+    "link": {
+      "time-range-label": "",
+      "time-range-description": "",
+      "shorten-url": "",
+      "link-url": "",
+      "info-text": "",
+      "copy-link-button": "",
+      "rendered-image": "",
+      "save-alert": "",
+      "save-dashboard": "",
+      "render-alert": "",
+      "render-instructions": ""
+    },
+    "tab-title": {
+      "link": "",
+      "snapshot": "",
+      "embed": "",
+      "library-panel": "",
+      "export": ""
+    },
+    "panel": {
+      "title": ""
+    },
+    "dashboard": {
+      "title": ""
+    },
+    "snapshot": {
+      "expire-never": "",
+      "expire-hour": "",
+      "expire-day": "",
+      "expire-week": "",
+      "name": "",
+      "expire": "",
+      "timeout": "",
+      "timeout-description": "",
+      "info-text-1": "",
+      "info-text-2": "",
+      "cancel-button": "",
+      "local-button": "",
+      "copy-link-button": "",
+      "mistake-message": "",
+      "delete-button": "",
+      "deleted-message": ""
+    },
+    "theme-picker": {
+      "current": "",
+      "dark": "",
+      "light": "",
+      "field-name": ""
+    }
+  },
+  "panel": {
+    "header-menu": {
+      "view": "",
+      "share": "",
+      "inspect-data": "",
+      "inspect-json": "",
+      "inspect": "",
+      "more": ""
+    }
+  },
+  "library-panel": {
+    "add-modal": {
+      "name": "",
+      "error": "",
+      "folder": "",
+      "folder-description": "",
+      "cancel": "",
+      "create": ""
+    }
+  },
+  "library-panels": {
+    "save": {
+      "error": "",
+      "success": ""
+    }
+  },
+  "user-orgs": {
+    "title": "",
+    "name-column": "",
+    "role-column": "",
+    "current-org-button": "",
+    "select-org-button": ""
+  },
+  "user-profile": {
+    "title": "",
+    "fields": {
+      "name-label": "",
+      "name-error": "",
+      "email-label": "",
+      "email-error": "",
+      "username-label": ""
+    }
+  },
+  "user-sessions": {
+    "loading": ""
+  },
+  "user-session": {
+    "seen-at-column": "",
+    "created-at-column": "",
+    "ip-column": "",
+    "browser-column": "",
+    "revoke": ""
+  }
+}

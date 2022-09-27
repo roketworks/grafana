@@ -1,0 +1,283 @@
+{
+  "navigation": {
+    "kiosk": {
+      "tv-alert": "Press ESC to exit kiosk mode"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "create": "Create",
+    "create-dashboard": "Dashboard",
+    "create-folder": "Folder",
+    "create-import": "Import",
+    "create-alert": "New alert rule",
+    "starred": "Starred",
+    "starred-empty": "Your starred dashboards will appear here",
+    "dashboards": "Dashboards",
+    "manage-dashboards": "Browse",
+    "playlists": "Playlists",
+    "snapshots": "Snapshots",
+    "library-panels": "Library panels",
+    "new-dashboard": "New dashboard",
+    "new-folder": "New folder",
+    "explore": "Explore",
+    "alerting": "Alerting",
+    "alerting-legacy": "Alerting (legacy)",
+    "alerting-list": "Alert rules",
+    "alerting-receivers": "Contact points",
+    "alerting-am-routes": "Notification policies",
+    "alerting-channels": "Notification channels",
+    "alerting-silences": "Silences",
+    "alerting-groups": "Groups",
+    "alerting-admin": "Admin",
+    "config": "Configuration",
+    "datasources": "Data sources",
+    "correlations": "Correlations",
+    "users": "Users",
+    "teams": "Teams",
+    "plugins": "Plugins",
+    "org-settings": "Preferences",
+    "api-keys": "API keys",
+    "service-accounts": "Service accounts",
+    "live": "Event streaming",
+    "live-status": "Status",
+    "live-pipeline": "Pipeline",
+    "live-cloud": "Cloud",
+    "help": "Help",
+    "profile/settings": "Preferences",
+    "profile/password": "Change password",
+    "sign-out": "Sign out"
+  },
+  "folder-picker": {
+    "loading": "Loading folders..."
+  },
+  "shared-preferences": {
+    "theme": {
+      "default-label": "Default",
+      "dark-label": "Dark",
+      "light-label": "Light"
+    },
+    "title": "Preferences",
+    "fields": {
+      "theme-label": "UI Theme",
+      "home-dashboard-label": "Home Dashboard",
+      "home-dashboard-placeholder": "Default dashboard",
+      "week-start-label": "Week start",
+      "locale-label": "Language",
+      "locale-placeholder": "Choose language"
+    }
+  },
+  "common": {
+    "locale": {
+      "default": "Default",
+      "en": "English",
+      "es": "Spanish",
+      "fr": "French"
+    },
+    "save": "Save"
+  },
+  "shared-dashboard": {
+    "fields": {
+      "timezone-label": "Timezone"
+    }
+  },
+  "dashboard": {
+    "toolbar": {
+      "unmark-favorite": "Unmark as favorite",
+      "mark-favorite": "Mark as favorite",
+      "share": "Share dashboard or panel",
+      "comments-show": "Show dashboard comments",
+      "playlist-previous": "Go to previous dashboard",
+      "playlist-stop": "Stop playlist",
+      "playlist-next": "Go to next dashboard",
+      "tv-button": "Cycle view mode",
+      "add-panel": "Add panel",
+      "save": "Save dashboard",
+      "open-original": "Open original dashboard",
+      "settings": "Dashboard settings",
+      "refresh": "Refresh dashboard"
+    },
+    "refresh-picker": {
+      "off-description": "Auto refresh turned off. Choose refresh time interval",
+      "on-description": "",
+      "off-label": "Off",
+      "off-arialabel": "Turn off auto refresh"
+    },
+    "inspect": {
+      "data-tab": "Data",
+      "stats-tab": "Stats",
+      "meta-tab": "Meta Data",
+      "json-tab": "JSON",
+      "error-tab": "Error",
+      "actions-tab": "Actions",
+      "query-tab": "Query",
+      "title": "Inspect: {{panelTitle}}",
+      "subtitle": "{{queryCount}} queries with total query time of {{formatted}}"
+    },
+    "inspect-data": {
+      "series-to-columns": "Series joined by time",
+      "panel-transforms": "Panel transforms",
+      "formatted": "Formatted data",
+      "excel-header": "Excel header",
+      "data-options": "Data options",
+      "dataframe-label": "Show data frame",
+      "dataframe-aria-label": "Select dataframe",
+      "transformations-label": "Apply panel transformations",
+      "transformations-description": "Table data is displayed with transformations defined in the panel Transform tab.",
+      "formatted-data-label": "Formatted data",
+      "formatted-data-description": "Table data is formatted with options defined in the Field and Override tabs.",
+      "download-excel-label": "Download for Excel",
+      "download-excel-description": "Adds header to CSV for use with Excel",
+      "download-csv": "Download CSV",
+      "download-logs": "Download logs",
+      "download-traces": "Download traces",
+      "download-service": "Download service graph",
+      "transformation": "Series joined by time"
+    },
+    "inspect-json": {
+      "panel-json-label": "Panel JSON",
+      "panel-json-description": "The model saved in the dashboard JSON that configures how everything works.",
+      "panel-data-label": "Panel data",
+      "panel-data-description": "The raw model passed to the panel visualization",
+      "dataframe-label": "DataFrame JSON (from Query)",
+      "dataframe-description": "Raw data without transformations and field config applied. ",
+      "unknown": "Unknown Object: {{show}}",
+      "select-source": "Select source"
+    },
+    "inspect-meta": {
+      "no-inspector": "No Metadata Inspector"
+    },
+    "inspect-stats": {
+      "request-time": "Total request time",
+      "processing-time": "Data processing time",
+      "queries": "Number of queries",
+      "rows": "Total number rows",
+      "table-title": "Stats",
+      "data-title": "Data source stats"
+    }
+  },
+  "share-modal": {
+    "embed": {
+      "time-range-description": "Transforms the current relative time range to an absolute time range",
+      "info": "Generate HTML for embedding an iframe with this panel.",
+      "time-range": "Current time range",
+      "html": "Embed HTML",
+      "html-description": "The HTML code below can be pasted and included in another web page. Unless anonymous access is enabled, the user viewing that page need to be signed into Grafana for the graph to load.",
+      "copy": "Copy to clipboard"
+    },
+    "export": {
+      "share-externally-label": "Export for sharing externally",
+      "share-default-label": "Export with default values removed",
+      "info-text": "Export this dashboard.",
+      "cancel-button": "Cancel",
+      "view-button": "View JSON",
+      "save-button": "Save to file"
+    },
+    "library": {
+      "info": "Create library panel."
+    },
+    "link": {
+      "time-range-label": "Lock time range",
+      "time-range-description": "Transforms the current relative time range to an absolute time range",
+      "shorten-url": "Shorten URL",
+      "link-url": "Link URL",
+      "info-text": "Create a direct link to this dashboard or panel, customized with the options below.",
+      "copy-link-button": "Copy",
+      "rendered-image": "Direct link rendered image",
+      "save-alert": "Dashboard is not saved",
+      "save-dashboard": "To render a panel image, you must save the dashboard first.",
+      "render-alert": "Image renderer plugin not installed",
+      "render-instructions": "To render a panel image, you must install the&nbsp;<1>Grafana image renderer plugin</1>. Please contact your Grafana administrator to install the plugin."
+    },
+    "tab-title": {
+      "link": "Link",
+      "snapshot": "Snapshot",
+      "embed": "Embed",
+      "library-panel": "Library panel",
+      "export": "Export"
+    },
+    "panel": {
+      "title": "Share Panel"
+    },
+    "dashboard": {
+      "title": "Share"
+    },
+    "snapshot": {
+      "expire-never": "Never",
+      "expire-hour": "1 Hour",
+      "expire-day": "1 Day",
+      "expire-week": "7 Days",
+      "name": "Snapshot name",
+      "expire": "Expire",
+      "timeout": "Timeout (seconds)",
+      "timeout-description": "You might need to configure the timeout value if it takes a long time to collect your dashboard metrics.",
+      "info-text-1": "A snapshot is an instant way to share an interactive dashboard publicly. When created, we strip sensitive data like queries (metric, template, and annotation) and panel links, leaving only the visible metric data and series names embedded in your dashboard.",
+      "info-text-2": "Keep in mind, your snapshot <1>can be viewed by anyone</1> that has the link and can access the URL. Share wisely.",
+      "cancel-button": "Cancel",
+      "local-button": "Local Snapshot",
+      "copy-link-button": "Copy",
+      "mistake-message": "Did you make a mistake? ",
+      "delete-button": "Delete snapshot.",
+      "deleted-message": "The snapshot has been deleted. If you have already accessed it once, then it might take up to an hour before before it is removed from browser caches or CDN caches."
+    },
+    "theme-picker": {
+      "current": "Current",
+      "dark": "Dark",
+      "light": "Light",
+      "field-name": "Theme"
+    }
+  },
+  "panel": {
+    "header-menu": {
+      "view": "View",
+      "share": "Share",
+      "inspect-data": "Data",
+      "inspect-json": "Panel JSON",
+      "inspect": "Inspect",
+      "more": "More..."
+    }
+  },
+  "library-panel": {
+    "add-modal": {
+      "name": "Library panel name",
+      "error": "Library panel with this name already exists",
+      "folder": "Save in folder",
+      "folder-description": "Library panel permissions are derived from the folder permissions",
+      "cancel": "Cancel",
+      "create": "Create library panel"
+    }
+  },
+  "library-panels": {
+    "save": {
+      "error": "Error saving library panel: \"{{errorMsg}}\"",
+      "success": "Library panel saved"
+    }
+  },
+  "user-orgs": {
+    "title": "Organizations",
+    "name-column": "Name",
+    "role-column": "Role",
+    "current-org-button": "Current",
+    "select-org-button": "Select organisation"
+  },
+  "user-profile": {
+    "title": "Edit profile",
+    "fields": {
+      "name-label": "Name",
+      "name-error": "Name is required",
+      "email-label": "Email",
+      "email-error": "Email is required",
+      "username-label": "Username"
+    }
+  },
+  "user-sessions": {
+    "loading": "Loading sessions..."
+  },
+  "user-session": {
+    "seen-at-column": "Last seen",
+    "created-at-column": "Logged on",
+    "ip-column": "IP address",
+    "browser-column": "Browser &amp; OS",
+    "revoke": "Revoke user session"
+  }
+}

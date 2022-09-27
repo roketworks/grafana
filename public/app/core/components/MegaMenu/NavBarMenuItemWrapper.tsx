@@ -1,5 +1,4 @@
 import { css } from '@emotion/css';
-import { useLingui } from '@lingui/react';
 import React from 'react';
 
 import { GrafanaTheme2, NavModelItem } from '@grafana/data';
@@ -20,11 +19,10 @@ export function NavBarMenuItemWrapper({
   activeItem?: NavModelItem;
   onClose: () => void;
 }) {
-  const { i18n } = useLingui();
   const styles = useStyles2(getStyles);
 
   if (link.emptyMessageId && !linkHasChildren(link)) {
-    const emptyMessageTranslated = i18n._(menuItemTranslations[link.emptyMessageId]);
+    const emptyMessageTranslated = menuItemTranslations[link.emptyMessageId];
     return (
       <NavBarMenuSection link={link}>
         <ul className={styles.children}>

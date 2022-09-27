@@ -1,5 +1,4 @@
 import { css } from '@emotion/css';
-import { withI18n, withI18nProps } from '@lingui/react';
 import React, { PureComponent } from 'react';
 
 import { ConfirmButton, ConfirmModal, Button } from '@grafana/ui';

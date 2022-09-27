@@ -1,5 +1,4 @@
 import { css, cx } from '@emotion/css';
-import { useLingui } from '@lingui/react';
 import { useDialog } from '@react-aria/dialog';
 import { FocusScope } from '@react-aria/focus';
 import { OverlayContainer, useOverlay } from '@react-aria/overlays';
@@ -236,7 +235,6 @@ export function NavItem({
   activeItem?: NavModelItem;
   onClose: () => void;
 }) {
-  const { i18n } = useLingui();
   const styles = useStyles2(getNavItemStyles);
 
   if (linkHasChildren(link)) {
@@ -269,7 +267,7 @@ export function NavItem({
       </CollapsibleNavItem>
     );
   } else if (link.emptyMessageId) {
-    const emptyMessageTranslated = i18n._(menuItemTranslations[link.emptyMessageId]);
+    const emptyMessageTranslated = menuItemTranslations[link.emptyMessageId];
     return (
       <CollapsibleNavItem onClose={onClose} link={link} isActive={isMatchOrChildMatch(link, activeItem)}>
         <ul className={styles.children}>
