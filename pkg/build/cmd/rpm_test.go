@@ -6,8 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/grafana/build-pipeline/pkg/config"
-	"github.com/grafana/build-pipeline/pkg/subcmd/publishpackages"
+	"github.com/grafana/grafana/pkg/build/config"
 	"github.com/stretchr/testify/require"
 )
 
@@ -192,7 +191,7 @@ func TestSignRPMRepo(t *testing.T) {
 	err = ioutil.WriteFile(filepath.Join(repoDir, "repodata", "repomd.xml"), []byte("<xml></xml>"), 0600)
 	require.NoError(t, err)
 
-	cfg := publishpackages.PublishConfig{
+	cfg := PublishConfig{
 		Config: config.Config{
 			GPGPrivateKey: privKeyPath,
 			GPGPublicKey:  pubKeyPath,
